@@ -1,0 +1,12 @@
+for i in range(int(input())):
+    n, x, y, d= list(map(int,input().split()))
+    res=10**19+1
+    if abs(x-y)%d==0:
+        res=abs(x-y)/d
+    if (y-1)%d==0:
+        res=min(res, int(x/d)+(y-1)/d + (0 if x%d==0 else 1))
+    if (n-y)%d==0:
+        res=min(res, int((n-x)/d) + (n-y)/d + (0 if (n-x)%d==0 else 1))
+    if res ==10**19+1: print(-1)
+    else: print(int(res))
+
