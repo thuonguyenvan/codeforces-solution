@@ -1,0 +1,8 @@
+n=int(input())
+s=input()
+st,en, res=0,0,0
+for i in s:
+    if i=='G': st+=1
+    else: en, st=st, 0
+    res=max(res, st+en+1)
+print(min(res,s.count('G')))
